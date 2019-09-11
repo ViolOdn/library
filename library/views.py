@@ -2,6 +2,24 @@ from django.shortcuts import render_to_response, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from library.models import *
+from rest_framework import viewsets
+from library.serializers import ReaderSerializer, BookSerializer
+
+
+class ReaderViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Reader.objects.all().order_by('-id')
+    serializer_class = ReaderSerializer
+
+
+class BookViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Book.objects.all().order_by('-id')
+    serializer_class = BookSerializer
 
 
 def main_page(request):
