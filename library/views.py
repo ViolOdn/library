@@ -35,4 +35,13 @@ def editing_book(request):
     return HttpResponseRedirect('/')
 
 
+@csrf_exempt
+def add_book(request):
+    new_book_name = request.POST['book_name']
+    new_book_author = request.POST['author']
+    new_book_year = request.POST['year']
+    new_boor_user = Reader.objects.filter(id=request.POST['reader_id']).first()
+    new_book = Book(book_name=new_book_name, author=new_book_author, year=new_book_year, user_id=new_boor_user)
+    new_book.save()
+    return HttpResponseRedirect('/')
 

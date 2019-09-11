@@ -18,5 +18,21 @@
               {% endfor %}
           </table>
 
+<p> </p>
+<p> </p>
+<p><h3>Add new book</h3></p>
+<form method="post" action="/successful_adding_book">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Book info</label>
+      <p> </p>
+    <input type="text" class="form-control" placeholder="Write book's name" name="book_name" id="name" >
+      <input type="text" class="form-control" placeholder="Write author" name="author" id="author" >
+      <input type="number" class="form-control" placeholder="Write year" name="year" id="year" >
+      <input type="hidden" value="{{reader.id}}" class="form-control" placeholder="id" name="reader_id" id="id" >
+  </div>
+    <p> </p>
+     <button type="submit" class="btn btn-primary" id="reg1"> Save </button>
+</form>
+
 </body>
 </html>
