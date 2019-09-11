@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Book editing</title>
+</head>
+<body>
+<p><h3>Edit book</h3></p>
+<form method="post" action="/successful_editing">
+  <div class="form-group">
+    <input type="text" value="{{book.book_name}}" class="form-control" placeholder="Write book name" name="book_name" id="book_name" >
+      <input type="text" value="{{book.author}}" class="form-control" placeholder="Write author" name="author" id="book_author" >
+      <input type="number" value="{{book.year}}" class="form-control" placeholder="Write year" name="year" id="year" >
+      <input type="hidden" value="{{book.id}}" class="form-control" placeholder="id" name="id" id="book_id" >
+
+  </div>
+     <button type="submit" class="btn btn-primary" id="reg1"> Apply changes </button>
+
+</form>
+</body>
+</html>

@@ -1,12 +1,22 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>List of Books</title>
+    <meta charset="UTF-8">
+    <title>Books</title>
 </head>
 <body>
-{% for book in books %}
-{{ book }}
-{% endfor %}
+
+<h1> {{ reader.username }}'s list of books  </h1>
+
+
+<table border="1" id="books_table">
+              <tr>
+    <td> <b>Books</b> </td>
+              </tr>
+              {%for book in books%}
+                  <tr> <td>  <a href ="{% url 'open_edit_book_form' query=book.id%}"> {{book.book_name}}, {{book.author}} </a>  </td> </tr>
+              {% endfor %}
+          </table>
+
 </body>
 </html>
